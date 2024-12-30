@@ -1,0 +1,970 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace of the Lord Ministries</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #111; /* Slightly lighter black */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #d4a051; /* Golden hover effect */
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #111;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #d4a051; /* Golden color */
+            letter-spacing: 2px;
+        }
+
+        .hero .btn {
+            background-color: #d4a051; /* Golden button */
+            color: #000;
+            padding: 0.7rem 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .hero .btn:hover {
+            background-color: #b68e42;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .about-content h2 {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: #d4a051; /* Golden text */
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-content h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .about-content hr {
+            width: 50px;
+            border: 2px solid #d4a051; /* Golden line */
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+        }
+
+        .pastors {
+            margin-top: 1rem;
+            text-align: right;
+        }
+
+        .pastors h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .pastors p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .connect-btn {
+            display: inline-block;
+            background-color: #d4a051;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 0.7rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .connect-btn:hover {
+            background-color: #b68e42;
+        }
+
+        /* Church Service Section */
+        .church-service {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('background-placeholder.jpg') no-repeat center center/cover; /* Replace with actual background */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .video-box {
+            position: relative;
+            width: 400px;
+            height: 250px;
+        }
+
+        .video-box img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .video-box .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: #d4a051;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .video-box .play-button:hover {
+            background-color: #b68e42;
+        }
+
+        .play-button::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #000;
+            display: inline-block;
+        }
+
+        .text-content h3 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            color: #d4a051; /* Golden text */
+        }
+
+        .text-content h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .text-content .btn {
+            display: inline-block;
+            background-color: #d4a051;
+            color: #000;
+            padding: 0.7rem 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .text-content .btn:hover {
+            background-color: #b68e42;
+        }
+        
+    .prayer-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .left {
+      flex: 1;
+      background: url('https://via.placeholder.com/600x800') no-repeat center center/cover;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #d8a35b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      color: #fff;
+    }
+
+    .right .divider {
+      width: 50px;
+      height: 2px;
+      background-color: #fff;
+      margin: 10px 0;
+    }
+
+    .right .button {
+      text-align: center;
+      padding: 15px 25px;
+      font-size: 1rem;
+      color: #d8a35b;
+      background-color: #fff;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header style="position: sticky; top: 0; z-index: 1000; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
+    <!-- Logo -->
+    <div class="logo" style="flex-shrink: 0;">
+        <img src="gracee%20logo.PNG" alt="Grace of the Lord Ministries Logo" style="height: 60px; width: auto;">
+    </div>
+
+    <!-- Navigation Links -->
+    <nav style="flex-grow: 1; margin-left: 2rem;">
+        <ul class="nav-links" style="list-style: none; display: flex; gap: 2rem; justify-content: flex-end; margin: 0;">
+            <li><a href="mailto:grace%20@2024.html" style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">Home</a></li>
+            <li><a href="about%20us.html" style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">About Us</a></li>
+            <li><a href="MINISTRIES.html" style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">Ministries</a></li>
+            <li><a href="PRAYERS.html" style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">Prayers</a></li>
+            <li><a href="EVENTS.html" style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">Events</a></li>
+            <li><a href="contact%20us.html" style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Call-to-Action Button -->
+    <div class="watch-live" style="flex-shrink: 0;">
+        <a href="graceofthelordministries6763" style="text-decoration: none;">
+            <button style="background: linear-gradient(90deg, #ff5f6d, #ffc371); color: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                Watch Live
+            </button>
+        </a>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+
+    <!-- About Section -->
+
+    <!-- Church Service Section -->
+     <div class="container">
+  <div class="header">
+    <h1>Recent Series</h1>
+    <div class="divider"></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h2>Christmas 2022 - Grace Kids</h2>
+      <a href="#" class="play-button">▶</a>
+    </div>
+    <div class="card">
+      <h2>Christmas 2022 - Adult Choir</h2>
+      <a href="#" class="play-button">▶</a>
+    </div>
+    <div class="card">
+      <h2>Christmas 2022 - Youth Choir</h2>
+      <a href="#" class="play-button">▶</a>
+    <br><br>
+    </div>
+    <div class="card">
+      <h2>Christmas 2021 - Men's Choir</h2>
+      <a href="#" class="play-button">▶</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #8a6d3b;
+  }
+
+  .divider {
+    width: 50px;
+    height: 2px;
+    background-color: #8a6d3b;
+    margin: 10px auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+  }
+
+  .card h2 {
+    font-size: 16px;
+    margin: 0 0 10px;
+    color: #333;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 15px;
+  }
+
+  .play-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #8a6d3b;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    text-decoration: none;
+  }
+</style>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .prayer-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .prayer-section .left img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .prayer-section .right {
+            max-width: 500px;
+            margin-left: 20px;
+        }
+
+        .prayer-section .right h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .prayer-section .right h1 em {
+            color: #007BFF;
+            font-style: normal;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background-color: #007BFF;
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+
+        .prayer-section .right p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .prayer-section .right .button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .prayer-section .right .button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .prayer-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .prayer-section .right {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="prayer-section">
+        <div class="left">
+            <img src="pry.jpg" alt="Prayer Image">
+        </div>
+        <div class="right">
+            <h1><em>Need Prayer?</em> We’ll Pray For You!</h1>
+            <div class="divider"></div>
+            <p>Need prayer? We would love to pray for you. You can send us a message for prayer.</p>
+            <a href="#" class="button">Send Us A Message</a>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+  .prayer-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .left {
+    flex: 1;
+    background: url('https://via.placeholder.com/600x800') no-repeat center center/cover;
+  }
+
+  .right {
+    flex: 1;
+    background-color: #d8a35b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    color: #fff;
+  }
+
+  .right h1 {
+    font-size: 2.5rem;
+    margin: 0 0 20px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .right p {
+    font-size: 1rem;
+    margin: 0 0 20px;
+  }
+
+  .right .divider {
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    margin: 10px 0;
+  }
+
+  .right .button {
+    text-align: center;
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: #d8a35b;
+    background-color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .right .button:hover {
+    background-color: #c08e4a;
+    color: #fff;
+  }
+</style>
+	  <div class="upcoming-events">
+  <h2>Upcoming Events</h2>
+  <div class="divider"></div>
+  <body>
+    <div style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('sun.PNG') no-repeat center center/cover; height: 100vh; position: relative; color: white; font-family: 'Poppins', Arial, sans-serif;">
+      <div style="text-align: center; padding-top: 40vh;">
+        <h1 style="font-size: 4rem; margin: 0; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);">Sunday</h1>
+        <h2 style="font-size: 3rem; margin: 0; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);">SERVICE</h2>
+        <p style="font-size: 2rem; margin-top: 20px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);">14:30</p>
+      </div>
+      <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
+        <a href="https://www.youtube.com" target="_blank" style="margin: 0 10px;">
+          <img src="WhatsApp%20Image%202024-11-27%20at%2011.00.25%20AM.jpeg" alt="YouTube" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px;">
+          <img src="P6K3oc.jpg" alt="Facebook" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://www.instagram.com/graceofthelordministries43/" target="_blank" style="margin: 0 10px;">
+          <img src="WhatsApp%20Image%202024-11-27%20at%2011.11.09%20AM.jpeg" alt="Instagram" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+      </div>
+    </div>
+  </body>
+  <button class="load-more" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #FF6F61; color: white; border: none; border-radius: 5px; font-size: 1.2rem; font-family: 'Poppins', Arial, sans-serif; cursor: pointer; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#FF3B2E'" onmouseout="this.style.backgroundColor='#FF6F61'">Load More</button>
+</div>
+
+<style>
+  .upcoming-events {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+
+  .upcoming-events h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .divider {
+    width: 50px;
+    height: 2px;
+    background-color: #8a6d3b;
+    margin: 10px auto 30px;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .event-card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    width: 300px;
+  }
+
+  .event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .event-card .date {
+    color: #d8a35b;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 10px 15px 5px;
+  }
+
+  .event-card h3 {
+    font-size: 1.2rem;
+    margin: 0 15px 15px;
+    color: #333;
+  }
+
+  .load-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d8a35b;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .load-more:hover {
+    background-color: #b88344;
+  }
+.auto-style1 {
+	margin-top: 28;
+}
+</style>
+<div class="upcoming-events">
+  <h2>Upcoming Events</h2>
+  <div class="divider"></div>
+  <body>
+    <div id="event-container" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('sun.PNG') no-repeat center center/cover; height: 100vh; position: relative; color: white; font-family: 'Poppins', Arial, sans-serif;">
+      <div id="event-details" style="text-align: center; padding-top: 40vh;">
+        <!-- Event details will be dynamically populated -->
+      </div>
+      <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
+        <a href="https://www.youtube.com" target="_blank" style="margin: 0 10px;">
+          <img alt="YouTube" src="WhatsApp%20Image%202024-11-27%20at%2011.00.25%20AM.jpeg" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px;">
+          <img alt="Facebook" src="P6K3oc.jpg" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+        </a>
+        <a href="https://www.instagram.com/graceofthelordministries43/" target="_blank" style="margin: 0 10px;">
+          <img alt="Instagram" src="WhatsApp%20Image%202024-11-27%20at%2011.11.09%20AM.jpeg" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+        </a>
+      </div>
+    </div>
+
+    <div class="stay-connected">
+      <h2>Stay Connected with Us</h2>
+      <form>
+        <input type="email" placeholder="Enter Email" required />
+        <input type="text" placeholder="Enter Name" required />
+        <div class="checkbox">
+          <input id="data-agreement" type="checkbox" required />
+          <label for="data-agreement">I agree that my submitted data is being collected and stored.</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="footer-links">
+      <div class="links-column">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="links-column">
+        <h3>GOL App</h3>
+        <ul>
+          <li><a href="#">App Store</a></li>
+          <li><a href="#">Google Play</a></li>
+        </ul>
+      </div>
+      <div class="links-column">
+        <h3>Connect With Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Media</a></li>
+        </ul>
+      </div>
+      <div class="links-column">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>0752641642</li>
+          <li>Email: <a href="mailto:graceofthelordministries@gmail.com">graceofthelordministries@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+      .upcoming-events {
+        text-align: center;
+        padding: 40px;
+        background-color: #f9f9f9;
+      }
+
+      .upcoming-events h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .divider {
+        width: 50px;
+        height: 2px;
+        background-color: #8a6d3b;
+        margin: 10px auto 30px;
+      }
+
+      .stay-connected {
+        font-family: 'Poppins', Arial, sans-serif;
+        background-color: #d9a55d;
+        padding: 40px 20px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .stay-connected h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .stay-connected form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .stay-connected input[type=email], .stay-connected input[type=text] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .stay-connected button {
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #d9a55d;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .stay-connected button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #222;
+        color: #fff;
+      }
+
+      .footer-links .links-column {
+        max-width: 200px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links ul li a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .footer-links ul li a:hover {
+        color: #d9a55d;
+      }
+    </style>
+  </body>
+</div>
+<style>
+.stay-connected {
+    font-family: Arial, sans-serif;
+    background-color: #d9a55d;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.subscription h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.subscription form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.subscription input[type=email], .subscription input[type=text] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.checkbox {
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.subscription button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #d9a55d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscription button:hover {
+    background-color: #f0f0f0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.links-column {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.links-column h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.links-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links-column ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.links-column ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.links-column ul li a:hover {
+    text-decoration: underline;
+}
+</style>
+
+
+
+</body>
+</html>

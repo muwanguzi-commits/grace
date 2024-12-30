@@ -1,0 +1,1189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Grace of the Lord Ministries</title>
+<style>
+/* General Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Arial', sans-serif;
+	line-height: 1.6;
+	background-color: #000; /* Black background */;
+	color: #fff; /* White text */
+}
+/* Navigation Bar */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: #111; /* Slightly lighter black */;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+.logo img {
+	height: 50px;
+}
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+}
+.nav-links a {
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.nav-links a:hover {
+	color: #d4a051; /* Golden hover effect */
+}
+/* Hero Section */
+.hero {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #111;
+}
+.hero h1 {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+.hero p {
+	text-transform: uppercase;
+	font-size: 1rem;
+	margin-bottom: 2rem;
+	color: #d4a051; /* Golden color */;
+	letter-spacing: 2px;
+}
+.hero .btn {
+	background-color: #d4a051; /* Golden button */;
+	color: #000;
+	padding: 0.7rem 2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+.hero .btn:hover {
+	background-color: #b68e42;
+}
+/* About Section */
+.about-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 4rem 2rem;
+	max-width: 1200px;
+	margin: auto;
+}
+.about-content {
+	flex: 1;
+	padding-right: 2rem;
+}
+.about-content h2 {
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	color: #d4a051; /* Golden text */;
+	letter-spacing: 2px;
+	margin-bottom: 0.5rem;
+}
+.about-content h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+.about-content hr {
+	width: 50px;
+	border: 2px solid #d4a051;
+/* Golden line */margin-bottom: 1rem;
+}
+.about-content p {
+	margin-bottom: 1.5rem;
+}
+.about-image {
+	flex: 1;
+	text-align: center;
+}
+.about-image img {
+	width: 100%;
+	max-width: 350px;
+	border-radius: 10px;
+}
+.pastors {
+	margin-top: 1rem;
+	text-align: right;
+}
+.pastors h4 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #333;
+}
+.pastors p {
+	font-size: 1rem;
+	color: #555;
+}
+.connect-btn {
+	display: inline-block;
+	background-color: #d4a051;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 0.7rem 2rem;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+	margin-top: 1.5rem;
+	transition: background 0.3s ease;
+}
+.connect-btn:hover {
+	background-color: #b68e42;
+}
+/* Church Service Section */
+.church-service {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: url('background-placeholder.jpg') no-repeat center center/cover; /* Replace with actual background */
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.content {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	z-index: 1;
+	padding: 2rem;
+}
+.video-box {
+	position: relative;
+	width: 400px;
+	height: 250px;
+}
+.video-box img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+.video-box .play-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50px;
+	height: 50px;
+	background-color: #d4a051;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.video-box .play-button:hover {
+	background-color: #b68e42;
+}
+.play-button::before {
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 0 10px 15px;
+	border-color: transparent transparent transparent #000;
+	display: inline-block;
+}
+.text-content h3 {
+	text-transform: uppercase;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	margin-bottom: 0.5rem;
+	color: #d4a051; /* Golden text */
+}
+.text-content h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+	color: #fff;
+}
+.text-content .btn {
+	display: inline-block;
+	background-color: #d4a051;
+	color: #000;
+	padding: 0.7rem 2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background 0.3s ease;
+}
+.text-content .btn:hover {
+	background-color: #b68e42;
+}
+.prayer-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.left {
+	flex: 1;
+	background: url('https://via.placeholder.com/600x800') no-repeat center center/cover;
+}
+.right {
+	flex: 1;
+	background-color: #d8a35b;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 40px;
+	color: #fff;
+}
+.right .divider {
+	width: 50px;
+	height: 2px;
+	background-color: #fff;
+	margin: 10px 0;
+}
+.right .button {
+	text-align: center;
+	padding: 15px 25px;
+	font-size: 1rem;
+	color: #d8a35b;
+	background-color: #fff;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header style="position: sticky; top: 0; z-index: 1000; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
+	<!-- Logo -->
+	<div class="logo" style="flex-shrink: 0;">
+		<img alt="Grace of the Lord Ministries Logo" src="gracee%20logo.PNG" 
+		style="height: 60px; width: auto;"> </div>
+	<!-- Navigation Links -->
+	<nav style="flex-grow: 1; margin-left: 2rem;">
+		<ul class="nav-links" 
+			style="list-style: none; display: flex; gap: 2rem; justify-content: flex-end; margin: 0;">
+			<li><a href="mailto:grace%20@2024.html" 
+			style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">
+			Home</a></li>
+			<li><a href="about%20us.html" 
+			style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">
+			About Us</a></li>
+			<li><a href="MINISTRIES.html" 
+			style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">
+			Ministries</a></li>
+			<li><a href="PRAYERS.html" 
+			style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">
+			Prayers</a></li>
+			<li><a href="EVENTS.html" 
+			style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">
+			Events</a></li>
+			<li><a href="contact%20us.html" 
+			style="text-decoration: none; color: #fff; font-size: 1rem; text-transform: uppercase; font-weight: bold; transition: color 0.3s ease;">
+			Contact Us</a></li>
+		</ul>
+	</nav>
+	<!-- Call-to-Action Button -->
+	<div class="watch-live" style="flex-shrink: 0;">
+		<a href="graceofthelordministries6763" style="text-decoration: none;">
+		<button style="background: linear-gradient(90deg, #ff5f6d, #ffc371); color: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+		Watch Live</button></a></div>
+</header>
+<!-- Hero Section -->
+<!-- About Section -->
+<!-- Church Service Section -->
+<div class="container">
+	<div class="header">
+		<section class="about-section" 
+			style="font-family: 'Arial', sans-serif; background-color: #f9f9f9; padding: 40px 0; color: #333;">
+			<div class="about-content" 
+				style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
+				<h2 style="font-size: 36px; color: #4CAF50; font-weight: bold;">
+				The Church</h2>
+				<h1 style="font-size: 50px; color: #2E8B57; margin-bottom: 20px; font-family: 'Georgia', serif;">
+				<span class="auto-style3" style="font-weight: bold;">Grace of the 
+				Lord Ministries</span> </h1>
+				<hr style="border: 2px solid #4CAF50; width: 80%; margin-bottom: 30px;">
+				<p style="font-size: 18px; line-height: 1.6; color: #555;">
+				<strong>Grace of the Lord Ministries is biblically based on a non-denominational 
+				Church where our only aim is to take the Word of God undiluted to 
+				the people of nations the world over.</strong> </p>
+				<p style="font-size: 18px; line-height: 1.6; color: #555;">
+				<strong>The Lord has commanded us to be a light to the gentiles 
+				and salvation to the ends of the Earth. Our burden is to make disciples 
+				of all the nations, baptizing them in the name of the Father and 
+				of the Son and of the Holy Spirit, teaching them to observe all 
+				things Jesus commanded us.</strong> </p>
+				<a class="connect-btn" href="#" 
+				style="background-color: #2E8B57; color: white; padding: 12px 25px; text-decoration: none; font-size: 18px; border-radius: 5px; margin-top: 20px; display: inline-block;">
+				Connect </a></div>
+			<div class="about-image" 
+				style="text-align: center; margin-top: 40px;">
+				<img alt="Joseph Mulungi" height="237" 
+				src="WhatsApp%20Image%202024-11-27%20at%2011.11.09%20AM.jpeg" 
+				style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" 
+				width="998">
+				<div class="pastors" 
+					style="margin-top: 20px; font-size: 20px; font-style: italic; color: #555;">
+					<p>Pastor Joseph Mulungi and Josephine Mulungi</p>
+				</div>
+			</div>
+		</section>
+		<h1>Recent Series</h1>
+		<div class="divider">
+		</div>
+	</div>
+	<div class="grid">
+		<div class="card">
+			<h1>Recent Series</h1>
+			<div class="divider">
+			</div>
+		</div>
+		<div class="grid">
+			<div class="card">
+				<img alt="Grace Kids Choir" class="card-image" 
+				src="../../Downloads/WhatsApp%20Image%202024-12-14%20at%2010.14.42%20PM.jpeg">
+				<h2>MIDWEEK SERVICE</h2>
+				<a class="play-button" href="#">▶</a> </div>
+			<div class="card">
+				<img alt="Adult Choir" class="card-image" 
+				src="../../Downloads/WhatsApp%20Image%202024-12-15%20at%205.18.43%20AM.jpeg">
+				<h2>SUNDAY SERVICE</h2>
+				<a class="play-button" href="#">▶</a> </div>
+			<div class="card">
+				<img alt="Youth Choir" class="card-image" 
+				src="../../Downloads/WhatsApp%20Image%202024-12-15%20at%205.18.50%20AM%20(1).jpeg" 
+				style="height: 200px">
+				<h2>OUR MAIN SERVICE </h2>
+				<a class="play-button" href="#">▶</a> </div>
+			<div class="card">
+				<img alt="" height="200" 
+				src="../../Downloads/WhatsApp%20Image%202024-12-15%20at%205.18.54%20AM%20(1).jpeg" 
+				width="100%">
+				<h2>SUNDAY SCHOOL KIDS</h2>
+				<a class="play-button" href="#">▶</a> </div>
+		</div>
+	</div>
+	<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	max-width: 1200px;
+	margin: auto;
+	padding: 20px;
+}
+.header h1 {
+	text-align: center;
+	color: #333;
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+.divider {
+	width: 100px;
+	height: 3px;
+	background: #007bff;
+	margin: 10px auto 20px;
+	border-radius: 5px;
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+}
+.card {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	padding: 15px;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.card-image {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+h2 {
+	color: #555;
+	font-size: 1.2rem;
+	margin: 10px 0;
+}
+.play-button {
+	display: inline-block;
+	background: #007bff;
+	color: #fff;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: background 0.3s, box-shadow 0.3s;
+}
+.play-button:hover {
+	background: #0056b3;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+</style>
+	<style>
+.container {
+	width: 80%;
+	max-width: 1000px;
+	margin: 20px auto;
+	text-align: center;
+}
+.header {
+	margin-bottom: 20px;
+}
+.header h1 {
+	font-size: 24px;
+	margin: 0;
+	color: #8a6d3b;
+}
+.divider {
+	width: 50px;
+	height: 2px;
+	background-color: #8a6d3b;
+	margin: 10px auto;
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+}
+.card {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	text-align: left;
+}
+.card h2 {
+	font-size: 16px;
+	margin: 0 0 10px;
+	color: #333;
+}
+.card p {
+	font-size: 14px;
+	color: #777;
+	margin: 0 0 15px;
+}
+.play-button {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #8a6d3b;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-size: 18px;
+	text-decoration: none;
+}
+</style>
+	<div class="prayer-section">
+		<div class="left" style="height: 241px">
+			<html lang="en">
+
+			<head>
+			<meta charset="UTF-8">
+			<meta content="width=device-width, initial-scale=1.0" 
+			name="viewport">
+			<title>Prayer Section</title>
+			<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+}
+.prayer-section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 20px;
+}
+.prayer-section .left {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+}
+.prayer-section .left img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	object-fit: cover;
+}
+.prayer-section .right {
+	flex: 1;
+	max-width: 500px;
+	margin-left: 20px;
+}
+.prayer-section .right h1 {
+	color: #333;
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+.prayer-section .right h1 em {
+	color: #007BFF;
+	font-style: normal;
+}
+.divider {
+	width: 60px;
+	height: 4px;
+	background-color: #007BFF;
+	margin: 10px 0;
+	border-radius: 2px;
+}
+.prayer-section .right p {
+	font-size: 1rem;
+	color: #666;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+.prayer-section .right .button {
+	display: inline-block;
+	background-color: #007BFF;
+	color: #ffffff;
+	padding: 12px 25px;
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 1rem;
+	transition: background-color 0.3s, transform 0.2s;
+}
+.prayer-section .right .button:hover {
+	background-color: #0056b3;
+	transform: scale(1.05);
+}
+@media (max-width: 768px) {
+.prayer-section {
+	flex-direction: column;
+	text-align: center;
+}
+.prayer-section .right {
+	margin-left: 0;
+	margin-top: 20px;
+}
+}
+@media (max-width: 480px) {
+.prayer-section .right h1 {
+	font-size: 1.5rem;
+}
+.prayer-section .right p {
+	font-size: 0.9rem;
+}
+.prayer-section {
+	padding: 15px;
+	margin: 10px;
+}
+.prayer-section .right .button {
+	font-size: 0.9rem;
+	padding: 10px 20px;
+}
+}
+</style>
+			</head>
+
+			<body>
+
+			<html lang="en">
+
+			<head>
+			<meta charset="UTF-8">
+			<meta content="width=device-width, initial-scale=1.0" 
+			name="viewport">
+			<title>Church Weekly Program</title>
+			<style>
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 20px;
+}
+.schedule {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background: #f9f9f9;
+}
+.schedule h1 {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+	color: #333;
+}
+.current-day {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #0056b3;
+	margin-bottom: 15px;
+}
+.activity {
+	font-size: 1rem;
+	color: #333;
+}
+</style>
+			</head>
+
+			<body>
+
+			<div class="schedule">
+				<h1>Church Weekly Program</h1>
+				<div id="dayActivity">
+					<!-- Day and Activity will appear here --></div>
+			</div>
+			<script>
+        // Weekly schedule
+        const schedule = {
+            Monday: "Altar",
+            Tuesday: "Bible Study",
+            Wednesday: "Altar",
+            Thursday: "Midweek Service",
+            Friday: "Altar",
+            Saturday: "Choir Practice",
+            Sunday: "Sunday Service"
+        };
+
+        // Get the current day of the week
+        const today = new Date().toLocaleString('en-US', { weekday: 'long' });
+
+        // Get the activity for today
+        const activity = schedule[today];
+
+        // Display the day and activity
+        document.getElementById("dayActivity").innerHTML = `
+            <div class="current-day">Today is ${today}</div>
+            <div class="activity">Activity: ${activity}</div>
+        `;
+    </script>
+
+			</body>
+
+			</html>
+
+			</body>
+
+			</html>
+			<style>
+.prayer-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.left {
+	flex: 1;
+	background: url('aulter') no-repeat center center/cover;
+}
+.right {
+	flex: 1;
+	background-color: #d8a35b;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 40px;
+	color: #fff;
+}
+.right h1 {
+	font-size: 2.5rem;
+	margin: 0 0 20px;
+	font-weight: bold;
+	font-style: italic;
+}
+.right p {
+	font-size: 1rem;
+	margin: 0 0 20px;
+}
+.right .divider {
+	width: 50px;
+	height: 2px;
+	background-color: #fff;
+	margin: 10px 0;
+}
+.right .button {
+	text-align: center;
+	padding: 15px 25px;
+	font-size: 1rem;
+	color: #d8a35b;
+	background-color: #fff;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+.right .button:hover {
+	background-color: #c08e4a;
+	color: #fff;
+}
+</style>
+		</div>
+	</div>
+	<div class="upcoming-events">
+		<div class="divider">
+		</div>
+		<body>
+
+		<div style="background: url('aulter.PNG') no-repeat center center/cover; height: 100vh; position: relative; color: white; font-family: Arial, sans-serif;">
+			<div style="text-align: center; padding-top: 40vh;">
+				<h1 style="font-size: 4rem; margin: 0;">Sunday</h1>
+				<h2 style="font-size: 3rem; margin: 0;">SERVICE</h2>
+				<p style="font-size: 2rem; margin-top: 20px;">14:30</p>
+			</div>
+			<div class="social-media-container">
+				<h3>Follow Us</h3>
+				<div class="social-media-links">
+					<a class="social-link" href="https://www.youtube.com" 
+					target="_blank"><img alt="YouTube" class="social-icon" 
+					src="WhatsApp%20Image%202024-11-27%20at%2011.00.25%20AM.jpeg">
+					</a><a class="social-link" href="https://www.facebook.com" 
+					target="_blank"><img alt="Facebook" class="social-icon" 
+					src="P6K3oc.jpg"> </a><a class="social-link" 
+					href="https://www.instagram.com" target="_blank">
+					<img alt="Instagram" class="social-icon" 
+					src="WhatsApp%20Image%202024-11-27%20at%2011.11.09%20AM.jpeg">
+					</a></div>
+			</div>
+			<style>
+.social-media-container {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	padding: 20px;
+	background: linear-gradient(to top, #ffffff, #f0f0f0);
+	border-radius: 15px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+	width: 90%;
+}
+.social-media-container h3 {
+	font-family: 'Arial', sans-serif;
+	color: #333;
+	font-size: 1.2rem;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.social-media-links {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+.social-link {
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+	position: relative;
+}
+.social-link:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.social-link:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.1);
+	z-index: 1;
+	transition: opacity 0.3s ease;
+	opacity: 0;
+}
+.social-link:hover:before {
+	opacity: 1;
+}
+.social-icon {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	z-index: 2;
+	position: relative;
+}
+@media (max-width: 768px) {
+.social-link {
+	width: 60px;
+	height: 60px;
+}
+.social-media-container h3 {
+	font-size: 1rem;
+}
+}
+</style>
+		</div>
+
+		</body>
+		<button class="load-more">Load More</button></div>
+	<style>
+.upcoming-events {
+	text-align: center;
+	padding: 40px;
+	background-color: #f9f9f9;
+}
+.upcoming-events h2 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+	color: #333;
+}
+.divider {
+	width: 50px;
+	height: 2px;
+	background-color: #8a6d3b;
+	margin: 10px auto 30px;
+}
+.events-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	justify-items: center;
+}
+.event-card {
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
+	text-align: left;
+	width: 300px;
+}
+.event-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+.event-card .date {
+	color: #d8a35b;
+	font-weight: bold;
+	font-size: 0.9rem;
+	margin: 10px 15px 5px;
+}
+.event-card h3 {
+	font-size: 1.2rem;
+	margin: 0 15px 15px;
+	color: #333;
+}
+.load-more {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: #d8a35b;
+	color: #fff;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+.load-more:hover {
+	background-color: #b88344;
+}
+</style>
+	<div class="upcoming-events">
+  <h2>Upcoming Events</h2>
+  <div class="divider"></div>
+  <body>
+    <div id="event-container" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('sun.PNG') no-repeat center center/cover; height: 100vh; position: relative; color: white; font-family: 'Poppins', Arial, sans-serif;">
+      <div id="event-details" style="text-align: center; padding-top: 40vh;">
+        <!-- Event details will be dynamically populated -->
+      </div>
+      <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
+        <a href="https://www.youtube.com" target="_blank" style="margin: 0 10px;">
+          <img alt="YouTube" src="WhatsApp%20Image%202024-11-27%20at%2011.00.25%20AM.jpeg" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px;">
+          <img alt="Facebook" src="P6K3oc.jpg" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+        </a>
+        <a href="https://www.instagram.com/graceofthelordministries43/" target="_blank" style="margin: 0 10px;">
+          <img alt="Instagram" src="WhatsApp%20Image%202024-11-27%20at%2011.11.09%20AM.jpeg" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+        </a>
+      </div>
+    </div>
+
+    <div class="stay-connected">
+      <h2>Stay Connected with Us</h2>
+      <form>
+        <input type="email" placeholder="Enter Email" required />
+        <input type="text" placeholder="Enter Name" required />
+        <div class="checkbox">
+          <input id="data-agreement" type="checkbox" required />
+          <label for="data-agreement">I agree that my submitted data is being collected and stored.</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="footer-links">
+      <div class="links-column">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="links-column">
+        <h3>GOL App</h3>
+        <ul>
+          <li><a href="#">App Store</a></li>
+          <li><a href="#">Google Play</a></li>
+        </ul>
+      </div>
+      <div class="links-column">
+        <h3>Connect With Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Media</a></li>
+        </ul>
+      </div>
+      <div class="links-column">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>0752641642</li>
+          <li>Email: <a href="mailto:graceofthelordministries@gmail.com">graceofthelordministries@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+      .upcoming-events {
+        text-align: center;
+        padding: 40px;
+        background-color: #f9f9f9;
+      }
+
+      .upcoming-events h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .divider {
+        width: 50px;
+        height: 2px;
+        background-color: #8a6d3b;
+        margin: 10px auto 30px;
+      }
+
+      .stay-connected {
+        font-family: 'Poppins', Arial, sans-serif;
+        background-color: #d9a55d;
+        padding: 40px 20px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .stay-connected h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .stay-connected form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .stay-connected input[type=email], .stay-connected input[type=text] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .stay-connected button {
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #d9a55d;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .stay-connected button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #222;
+        color: #fff;
+      }
+
+      .footer-links .links-column {
+        max-width: 200px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links ul li a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .footer-links ul li a:hover {
+        color: #d9a55d;
+      }
+    </style>
+  </body>
+</div>
+	<style>
+.stay-connected {
+	font-family: Arial, sans-serif;
+	background-color: #d9a55d;
+	padding: 40px 20px;
+	color: #fff;
+}
+.subscription h2 {
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+.subscription form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+.subscription input[type=email], .subscription input[type=text] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 5px;
+}
+.checkbox {
+	margin: 10px 0;
+	font-size: 14px;
+	text-align: left;
+}
+.subscription button {
+	padding: 10px 20px;
+	background-color: #fff;
+	color: #d9a55d;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.subscription button:hover {
+	background-color: #f0f0f0;
+}
+.footer-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 40px;
+}
+.links-column {
+	max-width: 200px;
+	margin-bottom: 20px;
+}
+.links-column h3 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #fff;
+}
+.links-column ul {
+	list-style: none;
+	padding: 0;
+}
+.links-column ul li {
+	margin-bottom: 8px;
+	font-size: 14px;
+}
+.links-column ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+.links-column ul li a:hover {
+	text-decoration: underline;
+}
+.auto-style2 {
+	vertical-align: top;
+}
+.auto-style3 {
+	color: #000000;
+}
+</style>
+</div>
+
+</body>
+
+</html>
